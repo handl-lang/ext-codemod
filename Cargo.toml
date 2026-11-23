@@ -40,17 +40,17 @@ opt-level = 1
 # resolve to the sibling checkouts; once the remotes carry the crates this
 # block can shrink back to the kit crates (same convention as
 # ext-codegen's dev-link patch table).
-[patch."https://github.com/handl-lang/compile-dot"]
+[patch."https://github.com/handl-lang/tool-compile-dot"]
 handl-plugin-compile-dot = { path = "../tool-compile-dot/modules/compile-dot" }
-[patch."https://github.com/handl-lang/compile-handl"]
+[patch."https://github.com/handl-lang/tool-compile-handl"]
 handl-plugin-compile-handl = { path = "../tool-compile-handl/modules/compile-handl" }
-[patch."https://github.com/handl-lang/compile-js"]
+[patch."https://github.com/handl-lang/tool-compile-js"]
 handl-plugin-compile-js = { path = "../tool-compile-js" }
-[patch."https://github.com/handl-lang/compile-llvm"]
+[patch."https://github.com/handl-lang/tool-compile-llvm"]
 handl-plugin-compile-llvm = { path = "../tool-compile-llvm" }
-[patch."https://github.com/handl-lang/compile-sexp"]
+[patch."https://github.com/handl-lang/tool-compile-sexp"]
 handl-plugin-compile-sexp = { path = "../tool-compile-sexp/modules/compile-sexp" }
-[patch."https://github.com/handl-lang/compile-term"]
+[patch."https://github.com/handl-lang/tool-compile-term"]
 handl-plugin-compile-term = { path = "../tool-compile-term/modules/compile-term" }
 [patch."https://github.com/handl-lang/engine"]
 hnl-engine = { path = "../engine" }
