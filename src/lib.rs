@@ -1,7 +1,7 @@
 //! `hnl-ext-codemod` — the `codemod` extension for `hnl` (ADR-0149, PL-004).
 //!
 //! The pipeline lives in `handl-plugin-codemod` (the codemod registry over
-//! the `hnl-engine-codemod` declarative spec model) plus the command surface
+//! the `hnl-tool-codemod` declarative spec model) plus the command surface
 //! linked through `handl-plugin-ext-codemod`. This crate is the *packaging*:
 //! it exports the ADR-0149 ABI (`handl_ext_manifest` / `handl_ext_dispatch` /
 //! `handl_ext_free`) and routes the

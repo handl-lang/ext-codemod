@@ -8,8 +8,8 @@ host discovers it via `--ext-dir`, `$HANDL_EXT_DIR`, `~/.handl/ext/`, or a dev
 `target/debug/` next to the `hnl` binary.
 
 PL-004 T-086. The spec model (`codemod.yaml`: targets, rules, the
-plan/apply/revert lifecycle data) is `hnl-engine-codemod` in the sibling
-`engine-codemod` repo; the registry lives in `handl-plugin-codemod` and the
+plan/apply/revert lifecycle data) is `hnl-tool-codemod` in the sibling
+`tool-codemod` repo; the registry lives in `handl-plugin-codemod` and the
 command surface in `handl-plugin-ext-codemod`, both in the `host` repo.
 
 Codemod **never destroys** — the lifecycle is `plan` → `apply` → `revert`;
@@ -37,5 +37,5 @@ builds a `cdylib` + `rlib`; `cargo test` links the `rlib` statically.
 
 Deps resolve from sibling checkouts via the `[patch]` table in `Cargo.toml`
 (host@main does not yet carry `handl-plugin-codemod` /
-`handl-plugin-ext-codemod`, and `engine-codemod` has no git remote) — keep the
+`handl-plugin-ext-codemod`, and `tool-codemod` has no git remote) — keep the
 `handl-lang/*` sibling layout.
