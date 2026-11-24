@@ -28,6 +28,9 @@ handl-language = { git = "https://github.com/handl-lang/kernel", branch = "main"
 # registry over the `hnl-tool-codemod` spec model. Codemod NEVER
 # destroys — `revert` is the only undo path.
 handl-plugin-ext-codemod = { git = "https://github.com/handl-lang/host", branch = "main" }
+# `NativeRewrite` — the extra-rewrite-layer type `codemod_command_with`
+# takes (the kit's `handl:` `.hnl` rewrite adapter is passed as one).
+hnl-tool-transform = { git = "https://github.com/handl-lang/tool-transform", branch = "main" }
 serde_json = "1"
 
 [profile.dev]

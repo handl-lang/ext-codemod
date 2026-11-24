@@ -19,10 +19,12 @@
 //! response carries only the exit code.
 
 use std::path::Path;
+use std::sync::Arc;
 
 use handl_ext::{ExtRequest, ExtResponse, ExtensionManifest};
 use handl_kit_pkg::KitProjectExt;
 use handl_kit_prelude::Kit;
+use hnl_tool_transform::native::NativeRewrite;
 
 handl_ext::export!(
     ExtensionManifest::new("codemod")
@@ -50,7 +52,13 @@ fn run(args: &[String], cwd: &Path) -> ExtResponse {
     let kit = Kit::discover(cwd)
         .or_else(|_| Kit::new())
         .expect("canonical kit must assemble");
-    let code = handl_plugin_ext_codemod::codemod_command(kit.lang(), args);
+    // Wire the kit's `.hnl`-backed modules as `handl:<mod>.<fn>` rewrite
+    // resolvers — the same adapter `handl_rewrite_adapter` hands to
+    // transform engines (ADR-0094). `native:` functions and `requires:`
+    // engine contexts remain unwired: no canonical codemod native set or
+    // EngineContextProvider ships yet (see plugin-ext-codemod docs).
+    let rewrite_layers: Vec<Arc<dyn NativeRewrite>> = vec![Arc::new(kit.handl_rewrite_adapter())];
+    let code = handl_plugin_ext_codemod::codemod_command_with(kit.lang(), &rewrite_layers, args);
     ExtResponse {
         code,
         stdout: String::new(),
