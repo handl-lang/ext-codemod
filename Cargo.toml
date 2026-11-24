@@ -256,6 +256,8 @@ handl-plugin-codegen-emitter-file = { path = "../tool-codegen-file" }
 handl-plugin-codegen-emitter-python = { path = "../tool-codegen-python" }
 [patch."https://github.com/handl-lang/tool-codegen-webidl"]
 handl-plugin-codegen-backend-webidl = { path = "../tool-codegen-webidl" }
+[patch."https://github.com/handl-lang/tool-codegen-ffi"]
+handl-plugin-codegen-ffi = { path = "../tool-codegen-ffi" }
 
 
 [patch."https://github.com/handl-lang/lib-comb"]
