@@ -2,6 +2,7 @@
 name = "hnl-ext-codemod"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.85"
 description = "`hnl codemod` — declarative codemods as a dynamic `hnl` extension (ADR-0149, PL-004)."
 license = "MIT"
 repository = "https://github.com/handl-lang/ext-codemod"
